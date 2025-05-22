@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <img src="pfp.jpg" alt="Rasmus D." class="logo" />
+        <div class="header-content">
+          <h1>Rasmus D. | Computer Engineer</h1>
+          <nav class="site-nav">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="books.html" class="active"">Bookshelf</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <button id="theme-toggle">🌙</button>
+      </header>
+
+      <main>
+        <section id="books-grid">
+          <div class="books-box" id="currently-reading">
+            <h2>Currently Reading</h2>
+            <ul id="book-list-current" class="book-list"></ul>
+          </div>
+
+          <div class="books-box" id="last-finished">
+            <h2>Last Finished</h2>
+            <ul id="book-list-read" class="book-list"></ul>
+          </div>
+
+          <div class="books-box" id="to-read">
+            <h2>To Read</h2>
+            <ul id="book-list-to-read" class="book-list"></ul>
+          </div>
+
+          <div class="books-box" id="favorites">
+            <h2>Favorites</h2>
+            <ul id="book-list-favorites" class="book-list"></ul>
+          </div>
+        </section>
+
+
+      </main>
+
+      <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+
+        // Apply saved theme from localStorage or system preference
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          root.classList.add("dark-mode");
+        }
+
+        // Set the correct icon based on current theme
+        toggleBtn.textContent = root.classList.contains("dark-mode")
+          ? "☀️"
+          : "🌙";
+
+        // Toggle the theme and save the choice
+        toggleBtn.addEventListener("click", () => {
+          const darkNow = root.classList.toggle("dark-mode");
+          localStorage.setItem("theme", darkNow ? "dark" : "light");
+          toggleBtn.textContent = darkNow ? "☀️" : "🌙";
+        });
+      </script>
+
+      <script>
+      Promise.all([
+        fetch('book_lists/currently_reading.json').then(r => r.json()),
+        fetch('book_lists/read.json').then(r => r.json()),
+        fetch('book_lists/to_read.json').then(r => r.json())
+      ])
+      .then(([current, read, toRead]) => {
+        const currentList = document.getElementById('book-list-current');
+        const readList = document.getElementById('book-list-read');
+        const toReadList = document.getElementById('book-list-to-read');
+        const favoritesList = document.getElementById('book-list-favorites');
+
+        // Currently Reading
+        current.slice(0, 4).forEach(book => {
+          currentList.appendChild(createBookItem(book));
+        });
+
+        // Last Finished — show stars
+        read.slice(0, 4).forEach(book => {
+          readList.appendChild(createBookItem(book, true));
+        });
+
+        // To Read
+        toRead
+          .sort((a, b) => new Date(b['Date Added']) - new Date(a['Date Added']))
+          .slice(0, 4)
+          .forEach(book => {
+            toReadList.appendChild(createBookItem(book));
+          });
+
+        // Favorites: 5-star books from "read"
+        const favorites = read
+          .filter(book => Number(book['My Rating']) === 5)
+          .sort((a, b) => new Date(b['Date Read']) - new Date(a['Date Read']))
+          .slice(0, 4);
+
+        favorites.forEach(book => {
+          favoritesList.appendChild(createBookItem(book, true));
+        });
+
+
+        function createBookItem(book, showRating = false) {
+          const li = document.createElement('li');
+
+          const rawIsbn = (book.ISBN || book.ISBN13 || '').replace(/[^\dX]/g, '');
+          const hasIsbn = rawIsbn.length >= 10;
+
+          const coverUrl = hasIsbn
+            ? `https://covers.openlibrary.org/b/isbn/${rawIsbn}-M.jpg`
+            : 'https://via.placeholder.com/96x144?text=No+Cover';
+
+          // Build star rating (if enabled)
+          const rating = Number(book['My Rating']) || 0;
+          const stars = showRating
+            ? `<div class="stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>`
+            : '';
+
+          li.innerHTML = `
+            <img src="${coverUrl}" alt="Cover of ${book.Title}">
+            <div>
+              <strong>${book.Title}</strong><br>
+              <span>by ${book.Author}</span><br>
+              ${stars}
+            </div>
+          `;
+
+          return li;
+        }
+
+      })
+      .catch(err => console.error('Error loading book lists:', err));
+      </script>
+
+
+      <footer>
+        <p>&copy; 2025 Rasmus Davidsen</p>
+      </footer>
+    </div>
+  </body>
+</html>

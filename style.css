@@ -29,7 +29,6 @@ body {
     color 0.3s;
 }
 
-header,
 footer {
   background-color: var(--header-bg);
   color: var(--text);
@@ -38,13 +37,51 @@ footer {
   transition: background-color 0.3s;
 }
 
-nav a {
-  color: var(--link-color);
-  text-decoration: none;
-  margin: 0 1rem;
+.site-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center; /* vertically centers logo + content */
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--text);
+  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav a.active {
+.logo {
+  width: 64px;
+  height: 100%;
+  max-height: 80px; /* Prevent it from being too tall */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers both h1 and nav horizontally */
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.header-content h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.site-nav {
+  margin-top: 0.3rem;
+}
+
+.site-nav a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-nav a.active {
   font-weight: bold;
   border-bottom: 2px solid var(--text);
 }
@@ -97,13 +134,9 @@ html {
 
 html,
 body {
-  height: 100%;
+  height: auto; /* let the document be as tall as it needs */
   margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+  padding: 0;
 }
 
 main {

@@ -44,6 +44,11 @@ nav a {
   margin: 0 1rem;
 }
 
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--text);
+}
+
 button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;

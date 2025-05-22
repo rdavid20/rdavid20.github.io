@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>My Website</h1>
+      </div>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>This is the ABOUT page.</p>
+    </main>
+
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <script>
+      const toggleBtn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      // Apply saved theme from localStorage or system preference
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        root.classList.add("dark-mode");
+      }
+
+      // Set the correct icon based on current theme
+      toggleBtn.textContent = root.classList.contains("dark-mode")
+        ? "☀️"
+        : "🌙";
+
+      // Toggle the theme and save the choice
+      toggleBtn.addEventListener("click", () => {
+        const darkNow = root.classList.toggle("dark-mode");
+        localStorage.setItem("theme", darkNow ? "dark" : "light");
+        toggleBtn.textContent = darkNow ? "☀️" : "🌙";
+      });
+    </script>
+
+    <footer>
+      <p>&copy; 2025 Rasmus Davidsen</p>
+    </footer>
+  </body>
+</html>

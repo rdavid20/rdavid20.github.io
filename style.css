@@ -1,29 +1,107 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+:root {
+  --bg: #f9f9f9;
+  --text: #222222;
+  --header-bg: #e3e3e3;
+  --footer-bg: #e3e3e3;
+  --button-bg: #4a90e2;
+  --button-text: #ffffff;
+  --link-color: #2a7ae2;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+.dark-mode {
+  --bg: #1e1e1e;
+  --text: #e0e0e0;
+  --header-bg: #2b2b2b;
+  --footer-bg: #2b2b2b;
+  --button-bg: #4a90e2;
+  --button-text: #ffffff;
+  --link-color: #7ab4ff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+header,
+footer {
+  background-color: var(--header-bg);
+  color: var(--text);
+  padding: 1.5rem;
   text-align: center;
+  transition: background-color 0.3s;
 }
 
 nav a {
-  margin: 0 1rem;
-  color: #fff;
+  color: var(--link-color);
   text-decoration: none;
+  margin: 0 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3a78c2;
 }
 
 section {
   padding: 2rem;
 }
 
-footer {
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 1rem;
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+#theme-toggle:hover {
+  background-color: #3a78c2;
+  transform: scale(1.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 1rem 2rem;
 }

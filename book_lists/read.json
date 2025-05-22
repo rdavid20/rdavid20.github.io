@@ -1,14 +1,36 @@
 [
   {
-    "Title": "How Much Land Does A Man Need?",
-    "Author": "Leo Tolstoy",
-    "ISBN": "",
-    "ISBN13": "",
-    "My Rating": "0",
-    "Average Rating": "4.17",
+    "Title": "Mortality (Paperback)",
+    "Author": "Christopher Hitchens",
+    "ISBN": "1848879237",
+    "ISBN13": "9781848879232",
+    "My Rating": "5",
+    "Average Rating": "4.12",
     "Exclusive Shelf": "read",
-    "Date Read": "2025/05/19",
-    "Date Added": "2025/04/17"
+    "Date Read": "2023/01/01",
+    "Date Added": "2023/08/12"
+  },
+  {
+    "Title": "The Atheist’s Mass (Penguin Black Classics, #41)",
+    "Author": "Honoré de Balzac",
+    "ISBN": "014139742X",
+    "ISBN13": "9780141397429",
+    "My Rating": "0",
+    "Average Rating": "3.69",
+    "Exclusive Shelf": "read",
+    "Date Read": "2025/03/01",
+    "Date Added": "2025/05/22"
+  },
+  {
+    "Title": "How Much Land Does a Man Need?",
+    "Author": "Leo Tolstoy",
+    "ISBN": "0141397748",
+    "ISBN13": "9780141397740",
+    "My Rating": "3",
+    "Average Rating": "4.10",
+    "Exclusive Shelf": "read",
+    "Date Read": "2025/05/14",
+    "Date Added": "2025/05/22"
   },
   {
     "Title": "Love, Poverty, and War: Journeys and Essays",
@@ -18,14 +40,36 @@
     "My Rating": "0",
     "Average Rating": "4.11",
     "Exclusive Shelf": "read",
-    "Date Read": "",
+    "Date Read": "2025/01/01",
     "Date Added": "2025/04/27"
   },
   {
-    "Title": "Common Sense Addressed to the Inhabitants of America on the Following Interesting Subjects",
+    "Title": "Crime and Punishment",
+    "Author": "Fyodor Dostoevsky",
+    "ISBN": "0679420290",
+    "ISBN13": "9780679420293",
+    "My Rating": "5",
+    "Average Rating": "4.28",
+    "Exclusive Shelf": "read",
+    "Date Read": "2024/08/22",
+    "Date Added": "2020/09/28"
+  },
+  {
+    "Title": "Why I Am Not a Christian and Other Essays on Religion and Related Subjects",
+    "Author": "Bertrand Russell",
+    "ISBN": "0671203231",
+    "ISBN13": "9780671203238",
+    "My Rating": "4",
+    "Average Rating": "4.01",
+    "Exclusive Shelf": "read",
+    "Date Read": "2025/02/06",
+    "Date Added": "2025/01/29"
+  },
+  {
+    "Title": "Common Sense",
     "Author": "Thomas Paine",
-    "ISBN": "0984203702",
-    "ISBN13": "9780984203703",
+    "ISBN": "0143036254",
+    "ISBN13": "9780143036258",
     "My Rating": "4",
     "Average Rating": "4.00",
     "Exclusive Shelf": "read",
@@ -220,17 +264,6 @@
     "Date Added": "2023/08/12"
   },
   {
-    "Title": "Mortality",
-    "Author": "Christopher Hitchens",
-    "ISBN": "1619691892",
-    "ISBN13": "9781619691896",
-    "My Rating": "5",
-    "Average Rating": "4.12",
-    "Exclusive Shelf": "read",
-    "Date Read": "2023/01/01",
-    "Date Added": "2023/08/12"
-  },
-  {
     "Title": "Letters to a Young Contrarian",
     "Author": "Christopher Hitchens",
     "ISBN": "1549189034",
@@ -341,17 +374,6 @@
     "Date Added": "2025/01/22"
   },
   {
-    "Title": "Crime and Punishment",
-    "Author": "Fyodor Dostoevsky",
-    "ISBN": "",
-    "ISBN13": "",
-    "My Rating": "5",
-    "Average Rating": "4.28",
-    "Exclusive Shelf": "read",
-    "Date Read": "2024/08/22",
-    "Date Added": "2020/09/28"
-  },
-  {
     "Title": "On Liberty",
     "Author": "John Stuart Mill",
     "ISBN": "",
@@ -374,17 +396,6 @@
     "Date Added": "2025/01/23"
   },
   {
-    "Title": "Why I Am Not a Christian and Other Essays on Religion and Related Subjects",
-    "Author": "Bertrand Russell",
-    "ISBN": "",
-    "ISBN13": "",
-    "My Rating": "4",
-    "Average Rating": "4.01",
-    "Exclusive Shelf": "read",
-    "Date Read": "2025/02/06",
-    "Date Added": "2025/01/29"
-  },
-  {
     "Title": "The Myth of Sisyphus",
     "Author": "Albert Camus",
     "ISBN": "0141023996",
@@ -405,17 +416,6 @@
     "Exclusive Shelf": "read",
     "Date Read": "2025/03/17",
     "Date Added": "2025/01/23"
-  },
-  {
-    "Title": "The Atheist's Mass (Penguin Little Black Classics, #41)",
-    "Author": "Balzac, Honore de",
-    "ISBN": "",
-    "ISBN13": "",
-    "My Rating": "3",
-    "Average Rating": "3.57",
-    "Exclusive Shelf": "read",
-    "Date Read": "2025/03/22",
-    "Date Added": "2025/03/20"
   },
   {
     "Title": "Inferno (Robert Langdon, #4)",

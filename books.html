@@ -104,9 +104,14 @@
         });
 
         // Last Finished — show stars
-        read.slice(0, 4).forEach(book => {
-          readList.appendChild(createBookItem(book, true));
-        });
+        read
+          .filter(book => book['Date Read']) // make sure the date exists
+          .sort((a, b) => new Date(b['Date Read']) - new Date(a['Date Read']))
+          .slice(0, 4)
+          .forEach(book => {
+            readList.appendChild(createBookItem(book, true));
+          });
+
 
         // To Read
         toRead

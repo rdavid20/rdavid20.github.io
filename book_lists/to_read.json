@@ -1,25 +1,36 @@
 [
   {
-    "Title": "Inside Story",
-    "Author": "Martin Amis",
-    "ISBN": "",
-    "ISBN13": "",
+    "Title": "The Prince",
+    "Author": "Niccolò Machiavelli",
+    "ISBN": "0937832383",
+    "ISBN13": "9780937832387",
     "My Rating": "0",
-    "Average Rating": "4.00",
+    "Average Rating": "3.84",
     "Exclusive Shelf": "to-read",
     "Date Read": "",
-    "Date Added": "2025/03/16"
+    "Date Added": "2025/01/23"
   },
   {
     "Title": "The Age of Reason",
     "Author": "Thomas Paine",
-    "ISBN": "1501018469",
-    "ISBN13": "9781501018466",
+    "ISBN": "1595479104",
+    "ISBN13": "9781595479105",
     "My Rating": "0",
     "Average Rating": "4.12",
     "Exclusive Shelf": "to-read",
     "Date Read": "",
     "Date Added": "2025/02/02"
+  },
+  {
+    "Title": "Inside Story",
+    "Author": "Martin Amis",
+    "ISBN": "1529113474",
+    "ISBN13": "9781529113471",
+    "My Rating": "0",
+    "Average Rating": "4.00",
+    "Exclusive Shelf": "to-read",
+    "Date Read": "",
+    "Date Added": "2025/03/16"
   },
   {
     "Title": "Discourses, Fragments, Handbook",
@@ -28,17 +39,6 @@
     "ISBN13": "9780199595181",
     "My Rating": "0",
     "Average Rating": "4.41",
-    "Exclusive Shelf": "to-read",
-    "Date Read": "",
-    "Date Added": "2025/01/23"
-  },
-  {
-    "Title": "The Prince",
-    "Author": "Niccolò Machiavelli",
-    "ISBN": "0141442255",
-    "ISBN13": "9780141442259",
-    "My Rating": "0",
-    "Average Rating": "3.84",
     "Exclusive Shelf": "to-read",
     "Date Read": "",
     "Date Added": "2025/01/23"

@@ -18,52 +18,54 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <img src="pfp.jpg" alt="Rasmus D." class="logo" />
-      <div class="header-content">
-        <h1>Rasmus D. | Computer Engineer</h1>
-        <nav class="site-nav">
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html" class="active">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <img src="pfp.jpg" alt="Rasmus D." class="logo" />
+        <div class="header-content">
+          <h1>Rasmus D. | Computer Engineer</h1>
+          <nav class="site-nav">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+          </nav>
+        </div>
+        <button id="theme-toggle">🌙</button>
+      </header>
 
-    <main>
-      <p>This is the CONTACT page.</p>
-    </main>
+      <main>
+        <p>This is the CONTACT page.</p>
+      </main>
 
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    <script>
-      const toggleBtn = document.getElementById("theme-toggle");
-      const root = document.documentElement;
+      <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        const root = document.documentElement;
 
-      // Apply saved theme from localStorage or system preference
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
+        // Apply saved theme from localStorage or system preference
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
 
-      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        root.classList.add("dark-mode");
-      }
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          root.classList.add("dark-mode");
+        }
 
-      // Set the correct icon based on current theme
-      toggleBtn.textContent = root.classList.contains("dark-mode")
-        ? "☀️"
-        : "🌙";
+        // Set the correct icon based on current theme
+        toggleBtn.textContent = root.classList.contains("dark-mode")
+          ? "☀️"
+          : "🌙";
 
-      // Toggle the theme and save the choice
-      toggleBtn.addEventListener("click", () => {
-        const darkNow = root.classList.toggle("dark-mode");
-        localStorage.setItem("theme", darkNow ? "dark" : "light");
-        toggleBtn.textContent = darkNow ? "☀️" : "🌙";
-      });
-    </script>
+        // Toggle the theme and save the choice
+        toggleBtn.addEventListener("click", () => {
+          const darkNow = root.classList.toggle("dark-mode");
+          localStorage.setItem("theme", darkNow ? "dark" : "light");
+          toggleBtn.textContent = darkNow ? "☀️" : "🌙";
+        });
+      </script>
 
-    <footer>
-      <p>&copy; 2025 Rasmus Davidsen</p>
-    </footer>
+      <footer>
+        <p>&copy; 2025 Rasmus Davidsen</p>
+      </footer>
+    </div>
   </body>
 </html>

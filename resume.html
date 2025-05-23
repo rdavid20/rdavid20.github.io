@@ -29,16 +29,63 @@
           <h1>Rasmus D. | Computer Engineer</h1>
           <nav class="site-nav">
             <a href="about.html">About</a>
+            <a href="resume.html" class="active">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="books.html">Bookshelf</a>
-            <a href="contact.html" class="active">Contact</a>
           </nav>
         </div>
         <button id="theme-toggle">🌙</button>
       </header>
 
       <main>
-        <p>This is the CONTACT page.</p>
+        <section id="education">
+          <div id="books-grid">
+            <div class="books-box">
+              <h2>Education</h2>
+
+              <div class="education-content">
+                <div class="education-entry">
+                  <div class="education-header">
+                    <h3>MSc in Computer Engineering</h3>
+                    <span class="education-date">2023–2025</span>
+                  </div>
+                  <p><strong>Aalborg University</strong></p>
+                  <ul>
+                    <li>
+                      Thesis: "Simulations of Quantum Protocols over Ethernet".
+                    </li>
+                    <li>
+                      Selected Courses: Machine Learning, Performance and
+                      Reliability Analysis of Communication Networks, Advanced
+                      Network Security, Perception and Acquisition of Data,
+                      Quantum Information and Computing.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="education-entry">
+                  <div class="education-header">
+                    <h3>BSc in Computer Engineering</h3>
+                    <span class="education-date">2020–2023</span>
+                  </div>
+                  <p><strong>Aalborg University</strong></p>
+                  <ul>
+                    <li>
+                      Thesis: "Antenna Diversity in a Practical IoT Setting".
+                    </li>
+                    <li>
+                      Selected Courses: Linear Algebra, Calculus, Computer
+                      Networks, Algorithms, Operating Systems, Languages and
+                      Compilers, High Performance Programming, Signal
+                      Processing, Object Oriented Analysis, Design and
+                      Implementation, Probability and Statistics.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <script>
@@ -65,6 +112,21 @@
           const darkNow = root.classList.toggle("dark-mode");
           localStorage.setItem("theme", darkNow ? "dark" : "light");
           toggleBtn.textContent = darkNow ? "☀️" : "🌙";
+        });
+      </script>
+
+      <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".books-box").forEach((box, i) => {
+            box.classList.add("hidden");
+            setTimeout(
+              () => {
+                box.classList.add("visible");
+                box.classList.remove("hidden");
+              },
+              100 + i * 100,
+            ); // staggered load
+          });
         });
       </script>
 

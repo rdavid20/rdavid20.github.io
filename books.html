@@ -26,6 +26,7 @@
           <h1>Rasmus D. | Computer Engineer</h1>
           <nav class="site-nav">
             <a href="about.html">About</a>
+            <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="books.html" class="active"">Bookshelf</a>
           </nav>
@@ -168,6 +169,20 @@
 
       })
       .catch(err => console.error('Error loading book lists:', err));
+      </script>
+      <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".books-box").forEach((box, i) => {
+            box.classList.add("hidden");
+            setTimeout(
+              () => {
+                box.classList.add("visible");
+                box.classList.remove("hidden");
+              },
+              100 + i * 100,
+            ); // staggered load
+          });
+        });
       </script>
 
 
